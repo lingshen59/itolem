@@ -1,0 +1,15 @@
+{
+  "name": "Onu",
+  "version": "1.0.0",
+  "description": "A OnuSquad raid bot by x666 Ling xd",
+  "main": "Onu-Bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "x666 LIng",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "node-fetch": "^2.6.7"
+  }
+}
