@@ -12,11 +12,11 @@ if(!fs.existsSync('ids_premium_users.json')){
 if(!fs.existsSync('blacklist_users.json')){
     fs.writeFileSync('blacklist_users.json','[{}]');
 };
-const bot_token = "MTMyNTY2NzkxNDExNTk3NzMxOQ.GRn8U2.dem7t8_isd65u0PBrl4nmQiLkPGRgoHzpNbhsU"; // Token del bot
+const bot_token = ""; // Token del bot
 const prefix = "."; // Prefijo de los comandos xd
 const prefix_p = "."; // Prefijo de los comandos premium
 let config_usuarios_premium = {};
-let idservidores_nopermitidos = ["1319155913264861268", "y_otro_id_:v", "y_otro_id_:v"]; // Lista de IDs de servidores donde el bot no puede ejecutar comandos de ataque
+let idservidores_nopermitidos = ["1319155913264861268", "id", "id"]; // Lista de IDs de servidores donde el bot no puede ejecutar comandos de ataque
 let usuarios_owners = ["1075858281760837633", "1234602618387693650"]; // Lista de IDs de los usuarios owners
 let usuarios_premium = [1075858281760837633];
 let blacklist_user = [];
