@@ -12,7 +12,7 @@ if(!fs.existsSync('ids_premium_users.json')){
 if(!fs.existsSync('blacklist_users.json')){
     fs.writeFileSync('blacklist_users.json','[{}]');
 };
-const bot_token = "MTMyNTY2NzkxNDExNTk3NzMxOQ.GhDd88.NHIxwpLsFO-Y2pMuj0Kbi7uWW7muJIBxyZSO2w"; // Token del bot
+const bot_token = ""; // Token del bot
 const prefix = "."; // Prefijo de los comandos xd
 const prefix_p = "."; // Prefijo de los comandos premium
 let config_usuarios_premium = {};
