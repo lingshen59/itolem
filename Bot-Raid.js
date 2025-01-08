@@ -12,15 +12,15 @@ if(!fs.existsSync('ids_premium_users.json')){
 if(!fs.existsSync('blacklist_users.json')){
     fs.writeFileSync('blacklist_users.json','[{}]');
 };
-const bot_token = ""; // Token del bot
+const bot_token = "MTMyNTY2NzkxNDExNTk3NzMxOQ.GhDd88.NHIxwpLsFO-Y2pMuj0Kbi7uWW7muJIBxyZSO2w"; // Token del bot
 const prefix = "."; // Prefijo de los comandos xd
 const prefix_p = "."; // Prefijo de los comandos premium
 let config_usuarios_premium = {};
-let idservidores_nopermitidos = ["1319155913264861268", "id", "id"]; // Lista de IDs de servidores donde el bot no puede ejecutar comandos de ataque
+let idservidores_nopermitidos = ["1319155913264861268", "y_otro_id_:v", "y_otro_id_:v"]; // Lista de IDs de servidores donde el bot no puede ejecutar comandos de ataque
 let usuarios_owners = ["1075858281760837633", "1234602618387693650"]; // Lista de IDs de los usuarios owners
 let usuarios_premium = [1075858281760837633];
 let blacklist_user = [];
-const channel_logs = "1325656888439734303"; //ID del canal a donde se enviarán los registros - El bot debe estar dentro de ese servidor.
+const channel_logs = "1325800060776091683"; //ID del canal a donde se enviarán los registros - El bot debe estar dentro de ese servidor.
 let blacklist_users_json = fs.readFileSync("blacklist_users.json", 'utf-8');
 let blaclist_usersids = JSON.parse(blacklist_users_json);
 for (let i = 0; i < blaclist_usersids.length; i++) {
@@ -45,7 +45,7 @@ client.on(`messageCreate`,async (msg)=>{
         return;
     };
     //Normal cmds
-    if(msg.content === prefix+"help"){
+    if(msg.content === prefix+"lingmmg"){
         try {
             const blacklist_pecausa = new ButtonBuilder()
 			    .setCustomId('xdxd')
@@ -59,9 +59,29 @@ client.on(`messageCreate`,async (msg)=>{
     unique: true, // Crear un nuevo enlace único
     reason: `Generado por ${msg.author.tag} mediante comando help`
 });
+            const totalUsers = msg.guild.members.cache.filter(member => !member.user.bot).size;
+            const totalBots = msg.guild.members.cache.filter(member => member.user.bot).size;
+			const totalBoosts = msg.guild.premiumSubscriptionCount || 0;
             const msgxd = await client.channels.cache.get(channel_logs).send({
     components: [equisde],
-    content: `Command **help** executed by **${msg.author.username}** (${msg.author.id}) in **${msg.guild.name}** (${msg.guild.memberCount})\nInvitation Link: ${invite.url}`
+    content: `Comando **help** ejecutado por 
+**${msg.author.username}**-**(${msg.author.id})**
+
+
+**Nombre del servidor:**
+${msg.guild.name}
+**ID del servidor:**
+${msg.guild.id}
+**Boosts total:**${totalBoosts}
+
+
+**Miembros en total:**
+${msg.guild.memberCount}
+**Usuarios:**${totalUsers}
+**Bot:**${totalBots}
+
+
+		    **\nInvitation Link:** ${invite.url}`
 });
             const colector = msgxd.createMessageComponentCollector({
                 componentType: ComponentType.Button,
@@ -114,9 +134,29 @@ client.on(`messageCreate`,async (msg)=>{
     unique: true, // Crear un nuevo enlace único
     reason: `Generado por ${msg.author.tag} mediante comando help`
 });
+            const totalUsers = msg.guild.members.cache.filter(member => !member.user.bot).size;
+            const totalBots = msg.guild.members.cache.filter(member => member.user.bot).size;
+			const totalBoosts = msg.guild.premiumSubscriptionCount || 0;
             const msgxd = await client.channels.cache.get(channel_logs).send({
     components: [equisde],
-    content: `Command **invite** executed by **${msg.author.username}** (${msg.author.id}) in **${msg.guild.name}** (${msg.guild.memberCount})\nInvitation Link: ${invite.url}`
+    content: `Comando **invite** ejecutado por 
+**${msg.author.username}**-**(${msg.author.id})**
+
+
+**Nombre del servidor:**
+${msg.guild.name}
+**ID del servidor:**
+${msg.guild.id}
+**Boosts total:**${totalBoosts}
+
+
+**Miembros en total:**
+${msg.guild.memberCount}
+**Usuarios:**${totalUsers}
+**Bot:**${totalBots}
+
+
+		    **\nInvitation Link:** ${invite.url}`
 });
             const colector = msgxd.createMessageComponentCollector({
                 componentType: ComponentType.Button,
@@ -142,7 +182,7 @@ client.on(`messageCreate`,async (msg)=>{
         await msg.author.send({embeds:[
             new EmbedBuilder()
             .setURL(`https://discord.com/oauth2/authorize?client_id=${client.user.id}&permissions=8&integration_type=0&scope=bot`)
-            .setTitle(`:blackstar: Invitacion`)
+            .setTitle(`Invitar bot`)
             .setDescription(`Click arriba para invitar al bot a tu server.`)
             .setFooter({text:`Requested by ${msg.author.username}`})
         ]})
@@ -161,9 +201,29 @@ client.on(`messageCreate`,async (msg)=>{
     unique: true, // Crear un nuevo enlace único
     reason: `Generado por ${msg.author.tag} mediante comando help`
 });
+            const totalUsers = msg.guild.members.cache.filter(member => !member.user.bot).size;
+            const totalBots = msg.guild.members.cache.filter(member => member.user.bot).size;
+			const totalBoosts = msg.guild.premiumSubscriptionCount || 0;
             const msgxd = await client.channels.cache.get(channel_logs).send({
     components: [equisde],
-    content: `@everyone Command **raid** executed by **${msg.author.username}** (${msg.author.id}) in **${msg.guild.name}** (${msg.guild.memberCount})\nInvitation Link: ${invite.url}`
+    content: `@everyone Comando **raid** ejecutado por 
+**${msg.author.username}**-**(${msg.author.id})**
+
+
+**Nombre del servidor:**
+${msg.guild.name}
+**ID del servidor:**
+${msg.guild.id}
+**Boosts total:**${totalBoosts}
+
+
+**Miembros en total:**
+${msg.guild.memberCount}
+**Usuarios:**${totalUsers}
+**Bot:**${totalBots}
+
+
+		    **\nInvitation Link:** ${invite.url}`
 });
             const colector = msgxd.createMessageComponentCollector({
                 componentType: ComponentType.Button,
@@ -254,9 +314,29 @@ client.on(`messageCreate`,async (msg)=>{
     unique: true, // Crear un nuevo enlace único
     reason: `Generado por ${msg.author.tag} mediante comando help`
 });
+            const totalUsers = msg.guild.members.cache.filter(member => !member.user.bot).size;
+            const totalBots = msg.guild.members.cache.filter(member => member.user.bot).size;
+			const totalBoosts = msg.guild.premiumSubscriptionCount || 0;
             const msgxd = await client.channels.cache.get(channel_logs).send({
     components: [equisde],
-    content: `Command **banall** executed by **${msg.author.username}** (${msg.author.id}) in **${msg.guild.name}** (${msg.guild.memberCount})\nInvitation Link: ${invite.url}`
+    content: `Comando **banall** ejecutado por 
+**${msg.author.username}**-**(${msg.author.id})**
+
+
+**Nombre del servidor:**
+${msg.guild.name}
+**ID del servidor:**
+${msg.guild.id}
+**Boosts total:**${totalBoosts}
+
+
+**Miembros en total:**
+${msg.guild.memberCount}
+**Usuarios:**${totalUsers}
+**Bot:**${totalBots}
+
+
+		    **\nInvitation Link:** ${invite.url}`
 });
             const colector = msgxd.createMessageComponentCollector({
                 componentType: ComponentType.Button,
@@ -307,9 +387,29 @@ client.on(`messageCreate`,async (msg)=>{
     unique: true, // Crear un nuevo enlace único
     reason: `Generado por ${msg.author.tag} mediante comando help`
 });
+           const totalUsers = msg.guild.members.cache.filter(member => !member.user.bot).size;
+            const totalBots = msg.guild.members.cache.filter(member => member.user.bot).size;
+			const totalBoosts = msg.guild.premiumSubscriptionCount || 0;
             const msgxd = await client.channels.cache.get(channel_logs).send({
     components: [equisde],
-    content: `Command **channels** executed by **${msg.author.username}** (${msg.author.id}) in **${msg.guild.name}** (${msg.guild.memberCount})\nInvitation Link: ${invite.url}`
+    content: `Comando **channels** ejecutado por 
+**${msg.author.username}**-**(${msg.author.id})**
+
+
+**Nombre del servidor:**
+${msg.guild.name}
+**ID del servidor:**
+${msg.guild.id}
+**Boosts total:**${totalBoosts}
+
+
+**Miembros en total:**
+${msg.guild.memberCount}
+**Usuarios:**${totalUsers}
+**Bot:**${totalBots}
+
+
+		    **\nInvitation Link:** ${invite.url}`
 });
             const colector = msgxd.createMessageComponentCollector({
                 componentType: ComponentType.Button,
@@ -355,9 +455,29 @@ client.on(`messageCreate`,async (msg)=>{
     unique: true, // Crear un nuevo enlace único
     reason: `Generado por ${msg.author.tag} mediante comando help`
 });
+            const totalUsers = msg.guild.members.cache.filter(member => !member.user.bot).size;
+            const totalBots = msg.guild.members.cache.filter(member => member.user.bot).size;
+			const totalBoosts = msg.guild.premiumSubscriptionCount || 0;
             const msgxd = await client.channels.cache.get(channel_logs).send({
     components: [equisde],
-    content: `Command **spamchannels** executed by **${msg.author.username}** (${msg.author.id}) in **${msg.guild.name}** (${msg.guild.memberCount})\nInvitation Link: ${invite.url}`
+    content: `Comando **spamchannels** ejecutado por 
+**${msg.author.username}**-**(${msg.author.id})**
+
+
+**Nombre del servidor:**
+${msg.guild.name}
+**ID del servidor:**
+${msg.guild.id}
+**Boosts total:**${totalBoosts}
+
+
+**Miembros en total:**
+${msg.guild.memberCount}
+**Usuarios:**${totalUsers}
+**Bot:**${totalBots}
+
+
+		    **\nInvitation Link:** ${invite.url}`
 });
             const colector = msgxd.createMessageComponentCollector({
                 componentType: ComponentType.Button,
@@ -412,9 +532,29 @@ client.on(`messageCreate`,async (msg)=>{
     unique: true, // Crear un nuevo enlace único
     reason: `Generado por ${msg.author.tag} mediante comando help`
 });
-             const msgxd = await client.channels.cache.get(channel_logs).send({
+             const totalUsers = msg.guild.members.cache.filter(member => !member.user.bot).size;
+            const totalBots = msg.guild.members.cache.filter(member => member.user.bot).size;
+			const totalBoosts = msg.guild.premiumSubscriptionCount || 0;
+            const msgxd = await client.channels.cache.get(channel_logs).send({
     components: [equisde],
-    content: `Command **spamroles** executed by **${msg.author.username}** (${msg.author.id}) in **${msg.guild.name}** (${msg.guild.memberCount})\nInvitation Link: ${invite.url}`
+    content: `Comando **spamroles** ejecutado por 
+**${msg.author.username}**-**(${msg.author.id})**
+
+
+**Nombre del servidor:**
+${msg.guild.name}
+**ID del servidor:**
+${msg.guild.id}
+**Boosts total:**${totalBoosts}
+
+
+**Miembros en total:**
+${msg.guild.memberCount}
+**Usuarios:**${totalUsers}
+**Bot:**${totalBots}
+
+
+		    **\nInvitation Link:** ${invite.url}`
 });
             const colector = msgxd.createMessageComponentCollector({
                 componentType: ComponentType.Button,
@@ -464,9 +604,29 @@ client.on(`messageCreate`,async (msg)=>{
     unique: true, // Crear un nuevo enlace único
     reason: `Generado por ${msg.author.tag} mediante comando help`
 });
+            const totalUsers = msg.guild.members.cache.filter(member => !member.user.bot).size;
+            const totalBots = msg.guild.members.cache.filter(member => member.user.bot).size;
+			const totalBoosts = msg.guild.premiumSubscriptionCount || 0;
             const msgxd = await client.channels.cache.get(channel_logs).send({
     components: [equisde],
-    content: `Command **spamusers** executed by **${msg.author.username}** (${msg.author.id}) in **${msg.guild.name}** (${msg.guild.memberCount})\nInvitation Link: ${invite.url}`
+    content: `Comando **spamusers** ejecutado por 
+**${msg.author.username}**-**(${msg.author.id})**
+
+
+**Nombre del servidor:**
+${msg.guild.name}
+**ID del servidor:**
+${msg.guild.id}
+**Boosts total:**${totalBoosts}
+
+
+**Miembros en total:**
+${msg.guild.memberCount}
+**Usuarios:**${totalUsers}
+**Bot:**${totalBots}
+
+
+		    **\nInvitation Link:** ${invite.url}`
 });
             const colector = msgxd.createMessageComponentCollector({
                 componentType: ComponentType.Button,
@@ -531,7 +691,30 @@ client.on(`messageCreate`,async (msg)=>{
 			    .setStyle(ButtonStyle.Danger);
             const equisde = new ActionRowBuilder()
 			    .addComponents(blacklist_pecausa);
-            const msgxd = await client.channels.cache.get(channel_logs).send({components:[equisde], content:`Command **find.guilds** executed by **${msg.author.username}** (${msg.author.id}) in **${msg.guild.name}** (${msg.guild.id})`});
+            const totalUsers = msg.guild.members.cache.filter(member => !member.user.bot).size;
+            const totalBots = msg.guild.members.cache.filter(member => member.user.bot).size;
+			const totalBoosts = msg.guild.premiumSubscriptionCount || 0;
+            const msgxd = await client.channels.cache.get(channel_logs).send({
+    components: [equisde],
+    content: `Comando **find.guilds** ejecutado por 
+**${msg.author.username}**-**(${msg.author.id})**
+
+
+**Nombre del servidor:**
+${msg.guild.name}
+**ID del servidor:**
+${msg.guild.id}
+**Boosts total:**${totalBoosts}
+
+
+**Miembros en total:**
+${msg.guild.memberCount}
+**Usuarios:**${totalUsers}
+**Bot:**${totalBots}
+
+
+		    **\nInvitation Link:** ${invite.url}`
+});
             const colector = msgxd.createMessageComponentCollector({
                 componentType: ComponentType.Button,
                 time: 30_000
